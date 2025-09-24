@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tip Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="form">
+      <label class="field">
+        <span>Bill</span>
+        <input id="bill" inputmode="decimal" placeholder="0" />
+      </label>
+
+      <fieldset class="field">
+        <legend>Select Tip %</legend>
+        <div class="grid">
+          <button class="tip-btn" data-tip="5">5%</button>
+          <button class="tip-btn" data-tip="10">10%</button>
+          <button class="tip-btn" data-tip="15">15%</button>
+          <button class="tip-btn" data-tip="25">25%</button>
+          <button class="tip-btn" data-tip="50">50%</button>
+          <input id="tip-custom" inputmode="numeric" placeholder="Custom" aria-label="Custom tip %" />
+        </div>
+      </fieldset>
+
+      <label class="field">
+        <span>Number of People</span>
+        <input id="people" inputmode="numeric" placeholder="1" />
+        <small id="people-error" class="error" hidden>Can't be zero</small>
+      </label>
+    </section>
+
+    <section class="result">
+      <div class="row">
+        <div>
+          <strong>Tip Amount</strong><br/><small>/ person</small>
+        </div>
+        <output id="tip-per-person">$0.00</output>
+      </div>
+      <div class="row">
+        <div>
+          <strong>Total</strong><br/><small>/ person</small>
+        </div>
+        <output id="total-per-person">$0.00</output>
+      </div>
+      <button id="reset" disabled>RESET</button>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
